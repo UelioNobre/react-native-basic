@@ -1,15 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import ImageViewer from './components/ImageViewer';
-import Button from './components/Button';
-import * as ImagePicker from 'expo-image-picker';
-import { useState } from 'react';
-import IconButton from './components/IconButton';
-import CircleButton from './components/CircleButton';
-import EmojiPicker from './components/EmojiPicker';
-import EmojiList from './components/EmojiList';
-import EmojiSticker from './components/EmojiSticker';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import * as ImagePicker from 'expo-image-picker';
+import { StatusBar } from 'expo-status-bar';
+import { Button, CircleButton, EmojiList, EmojiPicker, EmojiSticker, IconButton, ImageViewer } from './components';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
@@ -18,7 +12,6 @@ export default function App() {
   const [showAppOptions, setShowAppOptions] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pickedEmoji, setPickedEmoji] = useState(null);
-
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -50,7 +43,6 @@ export default function App() {
   const onModalClose = () => {
     setIsModalVisible(false);
   }
-
 
   return (
     <GestureHandlerRootView style={styles.container}>
