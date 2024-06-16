@@ -5,6 +5,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
 import { Button, CircleButton, EmojiList, EmojiPicker, EmojiSticker, IconButton, ImageViewer } from "./components";
+import { captureRef } from "react-native-view-shot";
 
 const PlaceholderImage = require("./assets/images/background-image.png");
 
