@@ -6,7 +6,7 @@ import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
 import { Button, CircleButton, EmojiList, EmojiPicker, EmojiSticker, IconButton, ImageViewer } from "./components";
 
-const PlaceholderImage = require('./assets/images/background-image.png');
+const PlaceholderImage = require("./assets/images/background-image.png");
 
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -25,7 +25,7 @@ export default function App() {
       setShowAppOptions(true);
       console.log(result)
     } else {
-      alert('Você não selecionou nenhum imagem.');
+      alert("Você não selecionou nenhum imagem.");
     }
   }
 
@@ -81,7 +81,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: "#25292e",
     alignItems: 'center',
   },
   imageContainer: {
