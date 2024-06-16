@@ -45,6 +45,12 @@ export default function App() {
     setIsModalVisible(false);
   }
 
+  const [status, requestPermission] = MediaLibrary.usePermissions();
+
+  if (status === null) {
+    requestPermission();
+  }
+
   return (
     <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
