@@ -6,9 +6,13 @@ import * as MediaLibrary from "expo-media-library";
 import { StatusBar } from "expo-status-bar";
 import { Button, CircleButton, EmojiList, EmojiPicker, EmojiSticker, IconButton, ImageViewer } from "./components";
 import { captureRef } from "react-native-view-shot";
-import domtoimage from 'dom-to-image';
+import domtoimage from "dom-to-image";
+import * as SplashScreen from "expo-splash-screen";
 
 const PlaceholderImage = require("./assets/images/background-image.png");
+
+SplashScreen.preventAutoHideAsync();
+setTimeout(SplashScreen.hideAsync, 5000);
 
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -111,7 +115,7 @@ export default function App() {
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
 
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </GestureHandlerRootView>
   );
 }
