@@ -39,8 +39,21 @@ export default function App() {
     setIsModalVisible(true);
   }
 
-  const onSaveImageAsync = () => {
-    // TODO
+  const onSaveImageAsync = async () => {
+    try {
+      const localUri = await captureRef(imageRef, {
+        height: 440,
+        quality: 1
+      });
+
+      await MediaLibrary.saveToLibraryAsync(localUri);
+
+      if (localUri) {
+        alert("Salvo com sucesso!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const onModalClose = () => {
